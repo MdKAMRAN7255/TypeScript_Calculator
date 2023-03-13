@@ -6,7 +6,19 @@ let fun_body:number = 0;
 let memory:number[]  = [];
 
 let display = document.getElementById("display") as HTMLInputElement;
-
+// key press function of keyboard
+document.addEventListener("keypress", (event) => {
+	var keyCode1:number = event.keyCode;
+	
+	// using asci value to check whther key_pressed is number, decimal point, or only these operator (+, -, *, /)
+	if (keyCode1 >= 48 && keyCode1 <= 57 || keyCode1 == 46 || keyCode1 == 42 || keyCode1 == 43 || keyCode1 == 45 || keyCode1 == 47) {
+		display.value += event.key;
+	}
+	// Checking if key pressed is only "Enter" key & if "Enter" key then eval the result
+	else if (keyCode1 == 13) { 
+        equal();
+    }
+});
 let reusable = ():void => {
         document.getElementById("trigo_fun_body")!.style.display = "";
         document.getElementById("trigo_fun_sin")!.style.display = "";
@@ -65,6 +77,7 @@ function second_button_display_Change():void{
         trigo_button = 0;
     }
 }
+
 
 
 function trigo_fun():void {
