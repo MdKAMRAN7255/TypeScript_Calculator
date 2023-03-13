@@ -7,7 +7,7 @@ let memory:number[]  = [];
 
 let display = document.getElementById("display") as HTMLInputElement;
 // key press function of keyboard
-document.addEventListener("keypress", (event) => {
+document.addEventListener("keypress", (event):void => {
 	var keyCode1:number = event.keyCode;
 	
 	// using asci value to check whther key_pressed is number, decimal point, or only these operator (+, -, *, /)
@@ -15,7 +15,8 @@ document.addEventListener("keypress", (event) => {
 		display.value += event.key;
 	}
 	// Checking if key pressed is only "Enter" key & if "Enter" key then eval the result
-	else if (keyCode1 == 13) { 
+	else if (keyCode1 == 13) {
+        (document.activeElement as HTMLElement).blur();
         equal();
     }
 });

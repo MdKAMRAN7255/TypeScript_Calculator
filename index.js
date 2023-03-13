@@ -5,40 +5,19 @@ var trigo_button = 0;
 var fun_body = 0;
 var memory = [];
 var display = document.getElementById("display");
+// key press function of keyboard
 document.addEventListener("keypress", function (event) {
-    console.log(event, "hii");
     var keyCode1 = event.keyCode;
-    // Get the value currently displayed on the calculator
-    // Check if the key pressed is a number, decimal point, or operator (+, -, *, /)
+    // using asci value to check whther key_pressed is number, decimal point, or only these operator (+, -, *, /)
     if (keyCode1 >= 48 && keyCode1 <= 57 || keyCode1 == 46 || keyCode1 == 42 || keyCode1 == 43 || keyCode1 == 45 || keyCode1 == 47) {
-        // Add the key pressed to the calculator display
-        console.log("hello", event.key);
         display.value += event.key;
     }
-    // Check if the key pressed is the "Enter" key
+    // Checking if key pressed is only "Enter" key & if "Enter" key then eval the result
     else if (keyCode1 == 13) {
-        // Remove focus from the currently focused element
-        if (true) {
-            document.activeElement.blur();
-        }
+        document.activeElement.blur();
         equal();
     }
 });
-// function keyboard_event(event) {
-// }
-// function keyboard_event(event):void{
-//     var keycode:number = event.keycode;
-//     if (keycode >= 48 && keycode <= 57 || keycode == 46 || keycode == 42 || keycode == 43 || keycode == 45 || keycode == 47) {
-// 		// Add the key pressed to the calculator display
-// 		display.value += Number(event.keycode);
-//         console.log(display.value)
-//         display.innerHTML = display.value;
-// 	}
-//     else if (keycode == 61) {
-// 		// Calculate the result
-// 		equal();
-// 	}
-// }
 var reusable = function () {
     document.getElementById("trigo_fun_body").style.display = "";
     document.getElementById("trigo_fun_sin").style.display = "";
