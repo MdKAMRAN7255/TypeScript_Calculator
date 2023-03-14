@@ -6,3 +6,5 @@ I also know the another method of doing this this using array, but making array 
 And when I compile my Typescript code I did not get eny error in terminal.
 
 ![Screenshot from 2023-03-13 20-50-31](https://user-images.githubusercontent.com/122250114/224890799-0ccfba04-6dfe-4a53-993c-08dc71d00479.png)
+
+Here is the link of the hosted page:- https://mdkamran7255.github.io/TypeScript_Calculator/
